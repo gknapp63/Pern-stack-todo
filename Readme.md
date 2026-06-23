@@ -2,7 +2,9 @@
 
 ## Source Code: https://github.com/WebDevBey/pern-todo-app
 
-## current location:6:09
+## Git Repro: https://github.com/gknapp63/Pern-stack-todo
+
+## current location:45:30
 
 ## Project backend initialisation: npm init -y
 
