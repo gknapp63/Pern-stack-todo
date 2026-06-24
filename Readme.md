@@ -4,7 +4,7 @@
 
 ## Git Repro: https://github.com/gknapp63/Pern-stack-todo
 
-## current location:54:56
+## current location: TUTORIAL COMPLETED
 
 ## Project backend initialisation: npm init -y
 
