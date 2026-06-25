@@ -17,3 +17,9 @@
 ## DB_USERNAME=postgres
 
 ## DB_PASSWORD=admin1234
+
+How to Deploy a PERN Stack App (PostgreSQL, Express, React, Node.js) | Render + Neon
+
+## https://www.youtube.com/watch?v=FR3Qcjymz9Q&t=21s
+
+## current location:

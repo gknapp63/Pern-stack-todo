@@ -3,6 +3,7 @@ import axios from "axios";
 import { MdModeEditOutline, MdOutlineDone } from "react-icons/md";
 import { FaTrash } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import { API_URL } from "./api.js";
 
 function App() {
   const [description, setDescription] = useState("");
@@ -16,7 +17,7 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get("http://localhost:3000/todos");
+      const res = await axios.get(`${API_URL}/todos`);
       setTodos(res.data);
       console.log(res.data);
     } catch (err) {
@@ -38,7 +39,7 @@ function App() {
     // Add your form submission logic here
     try {
       setError(null);
-      const res = await axios.post("http://localhost:3000/todos", {
+      const res = await axios.post(`${API_URL}/todos`, {
         description,
         completed: false,
       });
@@ -63,7 +64,7 @@ function App() {
         return;
       }
 
-      await axios.put(`http://localhost:3000/todos/${id}`, {
+      await axios.put(`${API_URL}/todos/${id}`, {
         description: editedText,
       });
       setEditingTodo(null);
@@ -84,7 +85,7 @@ function App() {
   const DeleteTodo = async (id) => {
     try {
       setError(null);
-      await axios.delete(`http://localhost:3000/todos/${id}`);
+      await axios.delete(`${API_URL}/todos/${id}`);
       setTodos(todos.filter((todo) => todo.todo_id !== id));
     } catch (err) {
       console.log(err.message);
@@ -96,7 +97,7 @@ function App() {
     try {
       setError(null);
       const todo = todos.find((todo) => todo.todo_id === id);
-      await axios.put(`http://localhost:3000/todos/${id}`, {
+      await axios.put(`${API_URL}/todos/${id}`, {
         description: todo.description,
         completed: !todo.completed,
       });
